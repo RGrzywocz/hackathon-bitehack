@@ -1,0 +1,40 @@
+﻿@page "/match/{searchPattern}"
+    <div class=" card vh-100">
+        <div class="photo text-center card-header">
+            <h4 class="display-4">@searchPattern</h4>
+        </div>
+        <div class="bio card-body">
+            <h2 class="text-center">
+            <a href="@Link">@Title</a>
+            </h2>
+            
+           @* <Rate AllowHalf="true" DefaultValue="@Rating" />*@
+            @if(Description != null)
+            {
+                <div>
+                    @Description
+                </div>
+            }
+            <div class="container containerFrame">
+                <iframe class="pictureFrame"
+                        src="@Link">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="actions text-center card-footer">
+            <div class="Gutter-example">
+                <Row Gutter="24">
+                    <Col class="Gutter-row actions-button" Span="8">
+                    <Button OnClick="OnBackAction" class=" btn btn-primary btn-block" Size="large" Type="link">Back</Button>
+                    </Col>
+                    <Col class="Gutter-row .actions-button" Span="8">
+                    <Button OnClick="OnNoAction" class="btn btn btn-primary btn-block" Size="large" Type="primary" Danger>No</Button>
+                    </Col>
+                    <Col class="Gutter-row actions-button" Span="8">
+                    <Button OnClick="OnYesAction" class="btn btn btn-primary btn-block" Size="large" Type="primary">Yes</Button>
+                    </Col>
+                </Row>
+            </div>
+        </div>
+    </div>

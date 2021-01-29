@@ -1,0 +1,21 @@
+﻿@page "/mymatches"
+
+<div class="row">
+    <div class="col-md-6 col-lg-4 col-xl-3 offset-md-0 row top-buffer">
+        <h3 class="text-center">MyMatches</h3>
+    </div>
+
+    <div class="col-md-6 col-lg-4 col-xl-3 offset-md-0 row top-buffer">
+        <input @onchange="Filter" class="form-control" placeholder="Serach" id="ex1" type="text">
+    </div>
+</div>
+<div class="row">
+    @foreach (var name in FilteredPlaces)
+    {
+        <div class="col-md-6 col-lg-4 col-xl-3 offset-md-0 row top-buffer">
+            <BlazorEmployeeEFCore.Pages.Card.MatchCard CardTitle="@name"></BlazorEmployeeEFCore.Pages.Card.MatchCard>
+        </div>
+    }
+</div>
+
+   

@@ -1,0 +1,17 @@
+﻿<div class="card" style="width: 18rem;">
+    <div class="card-header text-right" style="padding:0px !important">
+        <button type="button" class="btn btn-danger" @onclick="@(()=> OnDeleteIteam.InvokeAsync(CardTitle.id))">X</button>
+    </div>
+    <div class="card-body text-center">
+        <a href="@CardTitle.link"><h2>@CardTitle.title</h2></a>
+        <p class="card-text">Ocena wyszukania: @CardTitle.rating</p>
+        <img class="card-img-top img-responsive" src="@CardTitle.image" alt="Card image cap">
+    </div>
+</div>
+
+@code{
+    [Parameter]
+    public PlaceModel CardTitle { get; set; }
+    [Parameter]
+    public EventCallback<int> OnDeleteIteam { get; set; }
+}
